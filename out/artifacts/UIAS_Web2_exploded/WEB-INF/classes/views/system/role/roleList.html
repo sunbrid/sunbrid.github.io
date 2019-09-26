@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>角色管理</title>
+    <link rel="stylesheet" type="text/css" href="../../../base/plugins/layui/css/layui.css">
+    <link rel="stylesheet" href="../../../base/css/global.css">
+    <script type="application/javascript" src="../../../base/plugins/layui/layui.js"></script>
+    <script src="../../../base/js/jquery-3.3.1.min.js"></script>
+    <script src="../../../base/js/global.js"></script>
+    <script src="../../../base/js/requestUtil.js"></script>
+    <script src="../../../base/js/baseUtil.js"></script>
+    <script src="js/roleList.js"></script>
+</head>
+<body>
+<div class="body">
+    <form class="formSearch" id="formSearch" class="layui-form">
+        <div class="button_gorup layui-inline"><a class="layui-btn  layui-btn-normal permission_add hidden_per" id="btnAdd">新增角色</a> <a
+                class="layui-btn layui-btn-danger permission_delete hidden_per" id="btnDelete">批量删除</a></div>
+        <div class="search_item_group layui-inline"><label class="layui-form-label">角色名称：</label>
+            <div class="layui-input-inline">
+                <input class="layui-input search" name="name" type="text" placeholder="请输入搜索的角色名称"></div>
+        </div>
+        <div class="layui-inline"><a class="layui-btn" id="btnSearch">搜索</a></div>
+    </form>
+    <table class="layui-table" id="tabelList">
+        <thead>
+        <tr>
+            <th><input type="checkbox" class="inpDel"></th>
+            <th>角色名称</th>
+            <th>角色描述</th>
+            <th>更新人</th>
+            <th>更新时间</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tfoot>
+        <tr>
+            <td colspan="6"><p id="printPage" class="layui-box layui-laypage layui-laypage-default"></p></td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+</body>
+</html>

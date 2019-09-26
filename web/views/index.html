@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页-统一身份认证系统</title>
+    <link rel="stylesheet" type="text/css" href="../base/plugins/layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="../base/plugins/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="../base/css/global.css">
+    <link rel="stylesheet" type="text/css" href="../index/css/index.css">
+    <script type="application/javascript" src="../base/plugins/layui/layui.js"></script>
+    <script src="../base/js/jquery-3.3.1.min.js"></script>
+    <script src="../index/js/index.js"></script>
+    <script src="../base/js/requestUtil.js"></script>
+
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="header layui-header">
+        <div class="layui-logo">统一身份认证系统</div>
+
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item"><img id="session_user_url" src="../images/tx.png"><label id="session_user_name" class="session_user_name">张三</label>
+                <dl class="layui-nav-child" id="navTopGroup">
+                    <dd><a class="nav_item" data-url="system/userSetting/user_setting.html" data-id="nav_user_setting">个人设置</a>
+                    </dd>
+                    <dd><a class="nav_item" data-url="system/userSetting/user_view.html" data-id="user_view">查看个人信息</a>
+                    </dd>
+                    <dd><a href="javascript:;" id="btnLoginOut">注销</a></dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="main_left layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <ul class="layui-nav layui-nav-tree" id="navGroup">
+                    <a class="nav_item hidden" id="nav_temp"><i></i>辅助菜单</a>
+                    <a class="hidden" id="tabClose_temp"><i></i>辅助关闭选项卡</a>
+                    <li class="layui-nav-item"><a class="nav_item" data-url="main.html" data-id="nav_1"><i
+                            class="fa fa-home"></i> 首页</a></li>
+                    <!--<li class="layui-nav-item"><a><i class="fa fa-align-justify"></i> Swagger</a></li>-->
+                    <!--<li class="layui-nav-item layui-nav-itemed"><a><i class="fa fa-cog"></i> 系统管理</a>-->
+                        <!--<dl class="layui-nav-child">-->
+                            <!--<dd><a class="nav_item" data-url="system/loginLog/loginLogList.html" data-id="nav_201"><i-->
+                                    <!--class="fa fa-book"></i> 登录日志</a></dd>-->
+                            <!--<dd><a class="nav_item" data-url="system/operationLog/openationLogList.html"-->
+                                   <!--data-id="nav_202"><i class=" fa fa-file-text-o"></i> 操作日志</a></dd>-->
+                            <!--<dd><a class="nav_item" data-url="system/role/roleList.html" data-id="nav_203"><i-->
+                                    <!--class=" fa fa-male"></i> 角色管理</a></dd>-->
+                            <!--<dd><a class="nav_item" data-url="system/user/userList.html" data-id="nav_204"><i-->
+                                    <!--class="fa fa-user"></i> 用户管理</a></dd>-->
+                        <!--</dl>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="main_right layui-body">
+            <div class="main_right_tab  layui-tab" id="main_tab_group" lay-filter="main_tab_group"
+                 lay-allowClose="true">
+                <ul class="layui-tab-title">
+                    <li lay-id="lid_nav_1" class="layui-this tab_index">首页</li>
+                </ul>
+                <div class="layui-tab-content">
+                    <div class="main_right_iframe layui-tab-item  layui-show">
+                        <iframe src="main.html" id="ifm_nav_1"></iframe>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="main_right_foot layui-footer"><p>Copyright ©Sun, All Rights Reserved.</p></div>
+
+    </div>
+</div>
+</body>
+<script>
+    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function () {
+        var element = layui.element;
+
+        //…
+    });
+
+</script>
+</html>

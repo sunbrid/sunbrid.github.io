@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dc.mapper.SysRoleDao">
+    <resultMap id="mapRoleVo" type="com.dc.vo.SysRoleVo">
+        <id property="role_id" column="role_id"></id>
+        <association property="role" javaType="com.dc.pojo.SysRole">
+            <id property="role_id" column="role_id"></id>
+            <result property="name" column="name"></result>
+            <result property="memo" column="memo"></result>
+            <result property="create_user_name" column="create_user_name"></result>
+            <result property="create_time" column="create_time"></result>
+            <result property="update_user_name" column="update_user_name"></result>
+            <result property="update_time" column="update_time"></result>
+            <result property="version" column="version" ></result>
+        </association>
+        <collection property="listRolePermission" ofType="com.dc.pojo.SysRolePermission">
+            <id property="permission_id" column="permission_id"></id>
+            <result property="code" column="code"></result>
+            <result property="permission_value" column="permission_value"></result>
+        </collection>
+    </resultMap>
+    <select id="selectRoleAll" parameterType="map" resultType="com.dc.pojo.SysRole">
+        select * from t_sys_role where is_deleted=0
+        <if test="likeName!=null and likeName!=''">
+            and `name` like concat('%',#{likeName},'%')
+        </if>
+
+    </select>
+    <select id="selectRole" parameterType="com.dc.base.pojo.QueryParams" resultType="com.dc.pojo.SysRole">
+        select * from t_sys_role where is_deleted=0
+        <if test="where!='' and where!=null ">
+            and ${where}
+        </if>
+        order by
+        <if test="order!=null and order!=''">
+            ${order}
+        </if>
+        convert(name using gbk) asc
+    </select>
+    <select id="selectRoleByName" resultType="com.dc.pojo.SysRole" parameterType="string">
+select * from t_sys_role where is_deleted=0 and name =#{name}
+    </select>
+    <insert id="insertRole" parameterType="com.dc.pojo.SysRole" keyProperty="role_id" useGeneratedKeys="true">
+        insert into t_sys_role
+        (name,memo,create_user_id,create_user_name,create_time,is_deleted,version)
+        values
+        (#{name},#{memo},#{create_user_id},#{create_user_name},now(),0,0)
+    </insert>
+    <insert id="insertRolePermission" parameterType="com.dc.pojo.SysRolePermission" useGeneratedKeys="true" keyProperty="permission_id">
+        insert into t_sys_role_permission
+        (fk_role_id,code,permission_value,create_user_id,create_user_name,create_time)
+        values
+        (#{fk_role_id},#{code},#{permission_value},#{create_user_id},#{create_user_name},now())
+    </insert>
+    <select id="selectRoleVoByPk" parameterType="int" resultMap="mapRoleVo">
+        select sr.*,srp.permission_id,srp.code,srp.permission_value from t_sys_role sr
+        left join t_sys_role_permission srp
+        on sr.role_id=srp.fk_role_id
+        where sr.is_deleted=0 and role_id=#{pk}
+    </select>
+    <update id="updateRole" parameterType="com.dc.pojo.SysRole">
+        update t_sys_role set
+        version=version+1
+        <if test="name != null">
+            ,name=#{name}
+        </if>
+        <if test="memo != null">
+            ,memo=#{memo}
+        </if>
+        ,update_user_id=#{update_user_id},update_user_name=#{create_user_name},update_time=now()
+        where role_id=#{role_id} and version=#{version}
+    </update>
+<delete id="deleteRolePermission" parameterType="string">
+    delete from t_sys_role_permission
+where fk_role_id in(${fkRoleIds})
+</delete>
+    <update id="removeRoleInPk" parameterType="string">
+        update t_sys_role set is_deleted=1
+        where role_id in(${roleIds}) and is_deleted=0
+    </update>
+    <select id="selectRoleName" resultType="com.dc.pojo.SysRole">
+        select name,role_id from t_sys_role where is_deleted=0
+        order by  convert(name using gbk) asc
+    </select>
+    <delete id="deletUserRoleInRoleIds" parameterType="string">
+        delete from t_sys_user_role where fk_role_id in(${roleIds})
+    </delete>
+    <select id="selectRolePermissionByUserId" parameterType="int" resultType="com.dc.pojo.SysRolePermission">
+        select tsrp.code,tsrp.permission_value,tsrp.permission_id from t_sys_role_permission tsrp
+        join
+        t_sys_user_role tsur on tsur.fk_role_id=tsrp.fk_role_id
+        where tsur.fk_user_id=#{userId}
+    </select>
+</mapper>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>个人设置</title>
+    <link rel="stylesheet" type="text/css" href="../../../base/plugins/layui/css/layui.css">
+    <link rel="stylesheet" href="../../../base/css/global.css">
+    <script type="application/javascript" src="../../../base/plugins/layui/layui.js"></script>
+    <script src="../../../base/js/jquery-3.3.1.min.js"></script>
+    <script src="../../../base/js/global.js"></script>
+    <script src="../../../base/js/requestUtil.js"></script>
+    <script src="../../../base/js/baseUtil.js"></script>
+
+	 <style>
+        .portrait_img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script src="../../../base/js/uploadPreview.js"></script>
+    <script src="js/user_setting.js"></script>
+</head>
+<body>
+
+<fieldset class="layui-elem-field layui-field-title">
+    <legend>个人设置</legend>
+</fieldset>
+
+<form class="layui-form" action="" id="form_submit">
+    <input type="hidden" name="user.version" id="version-user-submit">
+    <div class="layui-form-item">
+        <label class="layui-form-label">头像</label>
+        <div class="layui-input-block">
+            <div id="imgGroup">
+                <img id="imgPreview" class="portrait_img" src="../../../images/tx.png">
+            </div>
+            <input class="layui-input" placeholder="请选择头像" name="baseModel.tempMFile" type="file" id="tempFile">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">用户名：</label>
+        <div class="layui-input-block">
+            <input type="text" class="layui-input" id="account-user-submit" disabled></div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">姓名：</label>
+        <div class="layui-input-block">
+            <input type="text" id="name-user-submit" class="layui-input" disabled></div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">手机：</label>
+        <div class="layui-input-block">
+            <input type="text" name="user.phone" id="phone-user-submit"
+                   placeholder="请输入手机号码" class="layui-input"></div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">出生日期：</label>
+        <div class="layui-input-block">
+            <input type="text"  name="user.birthday"
+                   placeholder="请选择出生日期" class="layui-input" id="birthday-user-submit"></div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">性别</label>
+        <div class="layui-input-block" id="sex_user_group">
+            <input type="radio" name="user.sex" checked value="0" title="保密">
+            <input name="user.sex" value="1" type="radio" title="男">
+            <input name="user.sex" value="2" type="radio" title="女">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">邮箱：</label>
+        <div class="layui-input-block">
+            <input type="email" name="user.email" id="email_user_sumit"
+                   placeholder="请输入邮箱" class="layui-input"></div>
+    </div>
+    <div class="layui-form-item hidden updatePasswordItem">
+        <label class="layui-form-label">*旧密码：</label>
+        <div class="layui-input-block">
+            <input type="password" name="old_password"
+                   placeholder="请输入旧密码" class="layui-input" id="old_password_submit"></div>
+    </div>
+    <div class="layui-form-item hidden updatePasswordItem">
+        <label class="layui-form-label">*新密码：</label>
+        <div class="layui-input-block">
+            <input type="password" name="user.password" id="password_user_submit"
+                   placeholder="请输入新密码" class="layui-input"></div>
+    </div>
+    <div class="layui-form-item hidden updatePasswordItem">
+        <label class="layui-form-label">*确认密码：</label>
+        <div class="layui-input-block">
+            <input type="password"id="passowrd_user_comfim"
+                   placeholder="请输入确认密码" class="layui-input"></div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button type="button" class="layui-btn" id="btn_update_password">修改密码</button>
+            <button type="button" class="layui-btn hidden" id="btn_cancel_update_password">取消修改密码</button>
+            <button type="button" class="layui-btn layui-btn-normal" id="btn_submit">立即提交</button>
+            <button type="button" class="layui-btn layui-btn-danger btn_close" type="button" id="btnClose">关闭</button>
+
+        </div>
+    </div>
+</form>
+
+
+</body>
+<script>
+    layui.use(['form','laydate'], function () {
+	    var laydate = layui.laydate;
+        //日期选择器
+        laydate.render({
+            elem: '#birthday-user-submit'
+        });
+    });
+</script>
+</html>

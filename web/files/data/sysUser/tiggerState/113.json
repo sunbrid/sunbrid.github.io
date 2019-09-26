@@ -1,0 +1,13 @@
+{
+  "resultCode": 0,
+  "message": "状态已切换",
+  "data": null,
+  "tempMFile": null,
+  "filesArray": null,
+  "queryParams": null,
+  "listAdvancedQuery": null,
+  "aopMesg": "118",
+  "token": "663cd340-2e87-cd34-e6d6-cb84ff732221",
+  "permission": "111111",
+  "permission_btns": ".permission_search,.permission_add,.permission_update,.permission_delete,.permission_imp,.permission_exp"
+}

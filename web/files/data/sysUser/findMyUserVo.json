@@ -1,0 +1,55 @@
+{
+  "resultCode": 0,
+  "message": "",
+  "data": {
+    "user_id": 113,
+    "role_names": "张三专用,管理员",
+    "old_password": null,
+    "user": {
+      "user_id": 113,
+      "account": "zhangsan",
+      "password": null,
+      "name": "张三",
+      "phone": "18868",
+      "head_img_url": null,
+      "state": 1,
+      "create_user_id": 0,
+      "create_user_name": "管理员",
+      "create_time": 1534228296000,
+      "update_user_id": 0,
+      "update_user_name": "张三",
+      "update_time": 1535437220000,
+      "is_deleted": 0,
+      "address": null,
+      "email": "",
+      "birthday": 1093622400000,
+      "version": 22,
+      "sex": 0,
+      "memo": "ces"
+    },
+    "listRole": null,
+    "listUserRole": [
+      {
+        "user_role_id": 0,
+        "fk_user_id": 0,
+        "fk_role_id": 25,
+        "version": 0
+      },
+      {
+        "user_role_id": 0,
+        "fk_user_id": 0,
+        "fk_role_id": 26,
+        "version": 0
+      }
+    ],
+    "fileLog": null
+  },
+  "tempMFile": null,
+  "filesArray": null,
+  "queryParams": null,
+  "listAdvancedQuery": null,
+  "aopMesg": "",
+  "token": "3ed76b21-6d0a-a7e8-b514-7e660bc8edff",
+  "permission": null,
+  "permission_btns": null
+}

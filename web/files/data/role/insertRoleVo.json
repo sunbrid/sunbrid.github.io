@@ -1,0 +1,13 @@
+{
+  "resultCode": 0,
+  "message": "新增角色‘学生1’信息成功",
+  "data": null,
+  "tempMFile": null,
+  "filesArray": null,
+  "queryParams": null,
+  "listAdvancedQuery": null,
+  "aopMesg": "新增角色‘学生1’信息成功",
+  "token": "23dc1bb7-e8b2-c8f9-32ef-2dae58fa08bd",
+  "permission": "11111",
+  "permission_btns": ".permission_search,.permission_add,.permission_update,.permission_delete"
+}

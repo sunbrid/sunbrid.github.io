@@ -1,0 +1,34 @@
+{
+  "resultCode": 0,
+  "message": "查询成功",
+  "data": [
+    {
+      "name": "角色管理",
+      "code": "203",
+      "roleValue": "查询,新增,修改,删除,批量删除"
+    },
+    {
+      "name": "用户管理",
+      "code": "204",
+      "roleValue": "查询,新增,修改,删除,导入,导出"
+    },
+    {
+      "name": "操作日志",
+      "code": "103",
+      "roleValue": "查询"
+    },
+    {
+      "name": "登录日志",
+      "code": "102",
+      "roleValue": "查询"
+    }
+  ],
+  "tempMFile": null,
+  "filesArray": null,
+  "queryParams": null,
+  "listAdvancedQuery": null,
+  "aopMesg": "",
+  "token": "99a7b50d-dbb3-41b5-c878-bb2e67ffb399",
+  "permission": null,
+  "permission_btns": null
+}

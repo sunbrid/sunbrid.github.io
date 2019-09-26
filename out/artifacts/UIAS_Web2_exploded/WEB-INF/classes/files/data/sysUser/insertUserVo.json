@@ -1,0 +1,50 @@
+{
+  "resultCode": 0,
+  "message": "新增用户成功",
+  "data": null,
+  "tempMFile": [
+    {
+      "fileItem": {
+        "fieldName": "baseModel.tempMFile",
+        "contentType": "application/octet-stream",
+        "size": 0,
+        "headers": {
+          "headerNames": [
+            "content-disposition",
+            "content-type"
+          ]
+        },
+        "name": "",
+        "inputStream": {},
+        "string": "",
+        "outputStream": {
+          "threshold": 10240,
+          "thresholdExceeded": false,
+          "file": "C:\\Users\\z9139\\.IntelliJIdea2018.1\\system\\tomcat\\Unnamed_identificationGroup\\work\\Catalina\\localhost\\_\\upload_49250724_aa31_4914_a536_b74c447ec0d9_00000000.tmp",
+          "data": "",
+          "inMemory": true,
+          "byteCount": 0
+        },
+        "inMemory": true,
+        "formField": false,
+        "charSet": null,
+        "storeLocation": "C:\\Users\\z9139\\.IntelliJIdea2018.1\\system\\tomcat\\Unnamed_identificationGroup\\work\\Catalina\\localhost\\_\\upload_49250724_aa31_4914_a536_b74c447ec0d9_00000000.tmp"
+      },
+      "size": 0,
+      "name": "baseModel.tempMFile",
+      "bytes": "",
+      "empty": true,
+      "inputStream": {},
+      "contentType": "application/octet-stream",
+      "originalFilename": "",
+      "storageDescription": "in memory"
+    }
+  ],
+  "filesArray": "",
+  "queryParams": null,
+  "listAdvancedQuery": null,
+  "aopMesg": "杨雨晨",
+  "token": "1b4bb206-11ef-e3ce-bb50-5efbdb66477c",
+  "permission": "111111",
+  "permission_btns": ".permission_search,.permission_add,.permission_update,.permission_delete,.permission_imp,.permission_exp"
+}

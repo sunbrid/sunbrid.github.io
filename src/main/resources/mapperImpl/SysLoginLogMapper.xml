@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dc.mapper.SysLoginLogDao">
+    <insert id="insert" parameterType="com.dc.pojo.SysLoginLog"
+            useGeneratedKeys="true" keyProperty="login_log_id">
+        insert into t_sys_loginlog
+        (user_id,user_account,user_password,user_name,login_date,request_ip,state,type,imei,model_number,session_id,version_num)
+        values
+        (#{user_id},#{user_account},#{user_password},#{user_name},now(),#{request_ip},#{state},#{type},#{imei},#{model_number},#{session_id},#{version_num})
+    </insert>
+    <update id="updateBySessionId" parameterType="com.dc.pojo.SysLoginLog">
+    update t_sys_loginlog set
+    loginout_date=now(),
+    loginout_type=#{loginout_type}
+    where session_id=#{session_id}
+</update>
+    <!--查询同一账号同一ip最后一次登录成功几率-->
+    <select id="selectLastLogin" parameterType="com.dc.pojo.SysLoginLog" resultType="com.dc.pojo.SysLoginLog">
+        select * from t_sys_loginlog
+        where request_ip=#{request_ip}
+        and user_account=#{user_account}
+        and state=1
+        order by login_date desc
+        limit 0,1
+    </select>
+    <!--查询同一账号同一ip某段时间内登录失败的记录数-->
+    <select id="selectCountLoginError" parameterType="com.dc.pojo.SysLoginLog" resultType="int">
+        select count(*) from t_sys_loginlog
+        where user_account=#{user_account}
+        and request_ip=#{request_ip}
+        and state!=1
+        and login_date>#{login_date}
+    </select>
+<select id="selectLoginLog" parameterType="com.dc.base.pojo.QueryParams" resultType="com.dc.pojo.SysLoginLog">
+    select * from t_sys_loginlog
+    <if test="where != null and where !=''">
+        where ${where}
+    </if>
+    order by
+    <if test="order != null">
+        ${order}
+    </if>
+    loginout_date desc
+
+</select>
+</mapper>

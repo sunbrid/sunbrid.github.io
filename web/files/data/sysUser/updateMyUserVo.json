@@ -1,0 +1,50 @@
+{
+  "resultCode": 0,
+  "message": "修改个人成功",
+  "data": null,
+  "tempMFile": [
+    {
+      "fileItem": {
+        "fieldName": "baseModel.tempMFile",
+        "contentType": "application/octet-stream",
+        "size": 0,
+        "headers": {
+          "headerNames": [
+            "content-disposition",
+            "content-type"
+          ]
+        },
+        "name": "",
+        "inputStream": {},
+        "string": "",
+        "outputStream": {
+          "threshold": 10240,
+          "thresholdExceeded": false,
+          "file": "C:\\Users\\z9139\\.IntelliJIdea2018.1\\system\\tomcat\\Unnamed_identificationGroup\\work\\Catalina\\localhost\\_\\upload_64e6355a_f7b7_4ed9_8f4a_c46cc6cd5dcf_00000032.tmp",
+          "data": "",
+          "inMemory": true,
+          "byteCount": 0
+        },
+        "storeLocation": "C:\\Users\\z9139\\.IntelliJIdea2018.1\\system\\tomcat\\Unnamed_identificationGroup\\work\\Catalina\\localhost\\_\\upload_64e6355a_f7b7_4ed9_8f4a_c46cc6cd5dcf_00000032.tmp",
+        "formField": false,
+        "inMemory": true,
+        "charSet": null
+      },
+      "size": 0,
+      "name": "baseModel.tempMFile",
+      "bytes": "",
+      "empty": true,
+      "inputStream": {},
+      "contentType": "application/octet-stream",
+      "storageDescription": "in memory",
+      "originalFilename": ""
+    }
+  ],
+  "filesArray": "",
+  "queryParams": null,
+  "listAdvancedQuery": null,
+  "aopMesg": "张三",
+  "token": "0af2c0ad-e80b-020d-7f11-8f2a482a5127",
+  "permission": null,
+  "permission_btns": null
+}

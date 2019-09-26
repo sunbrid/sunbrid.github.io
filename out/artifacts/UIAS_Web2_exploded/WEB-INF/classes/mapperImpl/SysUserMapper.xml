@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dc.mapper.SysUserDao">
+    <resultMap id="mapUserVo" type="com.dc.vo.SysUserVo">
+        <id property="user_id" column="user_id"></id>
+        <result property="role_names" column="role_names"></result>
+        <association property="user" javaType="com.dc.pojo.SysUser">
+            <id property="user_id" column="user_id"></id>
+            <result property="account" column="account"></result>
+            <result property="name" column="name"></result>
+            <result property="sex" column="sex"></result>
+            <result property="address" column="address"></result>
+            <result property="email" column="email"></result>
+            <result property="birthday" column="birthday"></result>
+            <result property="create_user_name" column="create_user_name"></result>
+            <result property="update_user_name" column="update_user_name"></result>
+            <result property="create_time" column="create_time"></result>
+            <result property="version" column="version"></result>
+            <result property="state" column="state"></result>
+            <result property="head_img_url" column="head_img_url"></result>
+            <result property="phone" column="phone"></result>
+            <result property="memo" column="memo"></result>
+        </association>
+        <association property="fileLog" javaType="com.dc.pojo.SysFileLog">
+            <id column="file_log_id" property="file_log_id"></id>
+            <result property="save_path" column="save_path"></result>
+        </association>
+        <collection property="listUserRole" ofType="com.dc.pojo.SysUserRole">
+            <id column="user_role_id" property="user_role_id"></id>
+            <result column="fk_role_id" property="fk_role_id"></result>
+        </collection>
+    </resultMap>
+    <select id="selectUserAll" resultType="com.dc.pojo.SysUser">
+        select * from t_sys_user where is_deleted=0
+    </select>
+    <select id="selectUserByAccount" parameterType="string" resultType="com.dc.pojo.SysUser">
+        SELECT * from t_sys_user where is_deleted=0 and account=#{account}
+    </select>
+    <insert id="insertUser" parameterType="com.dc.pojo.SysUser" keyProperty="user_id" useGeneratedKeys="true">
+        insert into t_sys_user
+        (account,password,name,phone,head_img_url,state,create_user_id,create_user_name,create_time
+        ,is_deleted,address,email,birthday,version,sex,memo)
+        values
+        (#{account},#{password},#{name},#{phone},#{head_img_url},1,#{create_user_id},#{create_user_name}
+        ,now(),0,#{address},#{email},#{birthday},0,#{sex},#{memo})
+    </insert>
+    <insert id="insertUserRole" parameterType="com.dc.pojo.SysUserRole" useGeneratedKeys="true"
+            keyProperty="user_role_id">
+        insert into t_sys_user_role
+        (fk_user_id,fk_role_id)
+        values
+        (#{fk_user_id},#{fk_role_id})
+    </insert>
+    <!--合并同一用户的角色名称，以逗号作为间隔-->
+    <sql id="selectRoleNames">
+          select  fk_user_id,GROUP_CONCAT(sr.name SEPARATOR ',')as role_names from t_sys_user_role sur
+join t_sys_role sr on sur.fk_role_id=sr.role_id and sr.is_deleted=0
+GROUP BY fk_user_id
+    </sql>
+    <select id="selectUserVo" parameterType="com.dc.base.pojo.QueryParams" resultMap="mapUserVo">
+        select su.*,trn.role_names from t_sys_user su
+        LEFT JOIN
+        (
+        <include refid="selectRoleNames"></include>
+        )trn on trn.fk_user_id=su.user_id
+        where su.is_deleted=0
+        <if test="where != null and where!=''">
+            and ${where}
+        </if>
+        order by
+        <if test="order != null">
+            ${order}
+        </if>
+        su.account asc
+    </select>
+    <select id="selectUserVoByPk" parameterType="int" resultMap="mapUserVo">
+        select su.*,sfl.file_log_id,sfl.save_path,sur.fk_role_id from t_sys_user su
+        left join t_sys_file_log sfl on su.head_img_url=sfl.file_log_id and sfl.isdeleted=0
+        left join t_sys_user_role sur on sur.fk_user_id=su.user_id
+         where su.is_deleted=0
+         and su.user_id=#{pk}
+    </select>
+    <update id="updateUser" parameterType="com.dc.pojo.SysUser">
+        update t_sys_user set
+        version=version+1
+        ,update_user_id=#{update_user_id}
+        ,update_user_name=#{create_user_name}
+        ,update_time=now()
+        <if test="account != null and account!=''">
+            ,account=#{account}
+        </if>
+        <if test="name!=null and name!=''">
+            ,name=#{name}
+        </if>
+        <if test="password!=null and password!=''">
+            ,password=#{password}
+        </if>
+        <if test="memo!=null">
+            ,memo=#{memo}
+        </if>
+        <if test="head_img_url!=null and head_img_url!=''">
+            ,head_img_url=#{head_img_url}
+        </if>
+        <if test="phone!=null">
+            ,phone=#{phone}
+        </if>
+
+        <if test="email!=null">
+            ,email=#{email}
+        </if>
+        <if test="address!=null">
+            ,address=#{email}
+        </if>
+        <if test="birthday!=null">
+            ,birthday=#{birthday}
+        </if>
+        <if test="sex!=null">
+            ,sex=#{sex}
+        </if>
+where user_id=#{user_id} and is_deleted=0
+    </update>
+    <!--根据用户id删除用户角色关系表-->
+    <delete id="deleteUserRoleInUserIds" parameterType="string">
+        delete from t_sys_user_role where fk_user_id in(${userIds})
+    </delete>
+<update id="removeUserInUserIds" parameterType="string">
+    update t_sys_user set is_deleted=1 where is_deleted=0 and user_id in(${userIds})
+</update>
+  <update id="switchState" parameterType="com.dc.pojo.SysUser">
+      update t_sys_user set state=#{state}
+      ,update_user_id=#{update_user_id}
+      ,update_user_name=#{update_user_name}
+      ,update_time=now()
+      where user_id=#{user_id}
+  </update>
+    <update id="resetPassword" parameterType="com.dc.pojo.SysUser">
+      update t_sys_user set password=#{password}
+      ,update_user_id=#{update_user_id}
+      ,update_user_name=#{update_user_name}
+      ,update_time=now()
+      where user_id=#{user_id}
+  </update>
+    <select id="selectUserByUserId" parameterType="int" resultType="com.dc.pojo.SysUser">
+        select * from t_sys_user where user_id=#{userId}
+    </select>
+</mapper>
+

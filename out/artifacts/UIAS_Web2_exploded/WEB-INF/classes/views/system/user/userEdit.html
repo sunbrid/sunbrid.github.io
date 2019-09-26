@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>用户修改</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../../base/plugins/layui/css/layui.css">
+    <link rel="stylesheet" href="../../../base/css/global.css">
+    <script type="application/javascript" src="../../../base/plugins/layui/layui.js"></script>
+    <script src="../../../base/js/jquery-3.3.1.min.js"></script>
+    <script src="../../../base/js/global.js"></script>
+    <script src="../../../base/js/requestUtil.js"></script>
+    <script src="../../../base/js/baseUtil.js"></script>
+
+    <style>
+        dl.layui-input-block dd, dl.layui-input-block dt {
+            float: left;
+        }
+
+        .portrait_img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script src="js/userEdit.js"></script>
+    <script src="../../../base/js/uploadPreview.js"></script>
+</head>
+<body>
+<fieldset class="layui-elem-field layui-field-title">
+    <legend>编辑用户信息</legend>
+</fieldset>
+<form class="layui-form" id="form_submit" id="form_submit">
+    <input type="hidden" name="user.user_id" id="user_id-user-submit">
+    <input type="hidden" name="user.version" id="version-user-submit">
+    <div class="layui-form-item">
+        <label class="layui-form-label">头像</label>
+        <div class="layui-input-block" id="imgGroup">
+            <img id="imgPreview" src="../../../images/tx.png" width="50px" height="50px">
+            <input id="tempFile" class="" placeholder="请选择头像" type="file" name="baseModel.tempMFile">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">*账号</label>
+        <div class="layui-input-block">
+            <input class="layui-input" placeholder="请输入账号" type="text" name="user.account" id="account-user-submit">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">*姓名</label>
+        <div class="layui-input-block">
+            <input class="layui-input" placeholder="请输入姓名" type="text" name="user.name" id="name-user-submit">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">手机</label>
+        <div class="layui-input-block">
+            <input class="layui-input" placeholder="请输入手机号码" type="text" name="user.phone" id="phone-user-submit">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">性别</label>
+        <div class="layui-input-block" id="sexGroup">
+            <input type="radio" name="user.sex" checked value="0" title="保密">
+            <input name="user.sex" value="1" type="radio"
+                   title="男">
+            <input name="user.sex"
+                   value="2"
+                   type="radio"
+                   title="女">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">出生日期</label>
+        <div class="layui-input-block">
+            <input class="layui-input" name="user.birthday" placeholder="请选择出生日期" type="text" id="birthday-user-submit">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">所属角色</label>
+        <div class="layui-input-block" id="roleGroup">
+            <input type="checkbox" title="管理员" name="listUserRole[0].fk_role_id">
+            <input type="checkbox" title="普通用户" name="listUserRole[1].fk_role_id">
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">备注</label>
+        <div class="layui-input-block">
+            <textarea class="layui-textarea" name="user.memo" id="memo-user-submit" placeholder="请输入备注"></textarea>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn btn_update permission_update hidden_per" type="button" id="btnEdit">编辑</button>
+            <button class="layui-btn btn_cancel hidden" type="button" id="btnCancel">取消</button>
+            <button class="layui-btn btn_submit_update hidden layui-btn-normal" type="button" id="btnSubmitUpdate">
+                修改
+            </button>
+            <button class="layui-btn  layui-btn-danger btn_close" type="button" id="btnClose">关闭</button>
+        </div>
+    </div>
+</form>
+</body>
+<script>
+    layui.use(['form', 'laydate'], function () {
+        var laydate = layui.laydate;
+        //日期选择器
+        laydate.render({
+            elem: '#birthday-user-submit'
+        });
+    });
+</script>
+</html>

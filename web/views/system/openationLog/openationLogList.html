@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作日志</title>
+    <link rel="stylesheet" type="text/css" href="../../../base/plugins/layui/css/layui.css">
+    <link rel="stylesheet" href="../../../base/css/global.css">
+    <script type="application/javascript" src="../../../base/plugins/layui/layui.js"></script>
+    <script src="../../../base/js/jquery-3.3.1.min.js"></script>
+    <script src="../../../base/js/global.js"></script>
+    <script src="../../../base/js/requestUtil.js"></script>
+    <script src="../../../base/js/baseUtil.js"></script>
+    <script src="js/operationLogList.js"></script>
+
+</head>
+<body>
+<div class="layui-form">
+    <div class="layui-form-item" id="formSearch">
+        <label class="layui-inline">操作人:</label>
+        <div class="layui-inline">
+            <input type="text" class="layui-input search" name="user_name" placeholder="请输入操作人"></div>
+        <div class="layui-inline">
+            <a class="layui-btn layui-btn-sm" id="btn_search">搜索</a></div> <a class="layui-btn layui-btn-sm"
+                                                                              id="btnAdvancedQuery">高级查询</a>
+    </div>
+</div>
+<div class="list_table">
+    <table class="layui-table" id="myTable">
+        <thead>
+        <tr>
+            <th>账号</th>
+            <th>操作人</th>
+            <th>ip</th>
+            <th>操作时间</th>
+            <th>模块</th>
+            <th>功能</th>
+            <th>操作内容</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+
+    </table>
+</div>
+<div class="list_footer">
+    <p id="printPage">
+    </p></div>
+</body>
+</html>

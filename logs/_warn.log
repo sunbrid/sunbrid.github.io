@@ -1,0 +1,4 @@
+[] [ERROR] [2019-09-16 23:43:30 下午] [Thread: main][ Class:com.dc.test.TestService >> Method: com.dc.test.TestService.deleteRolePermission(TestService.java:95) ]
+ERROR:删除了1条记录
+[] [ERROR] [2019-09-16 23:46:33 下午] [Thread: main][ Class:com.dc.test.TestService >> Method: com.dc.test.TestService.deleteRolePermission(TestService.java:95) ]
+ERROR:删除了0条记录

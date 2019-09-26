@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录日志</title>
+    <link rel="stylesheet" type="text/css" href="../../../base/plugins/layui/css/layui.css">
+    <link rel="stylesheet" href="../../../base/css/global.css">
+    <script type="application/javascript" src="../../../base/plugins/layui/layui.js"></script>
+    <script src="../../../base/js/jquery-3.3.1.min.js"></script>
+    <script src="../../../base/js/global.js"></script>
+    <script src="../../../base/js/requestUtil.js"></script>
+    <script src="../../../base/js/baseUtil.js"></script>
+    <script src="js/loginLogList.js"></script>
+
+</head>
+<body>
+<div class="layui-form">
+    <div class="layui-form-item" id="formSearch">
+        <label class="layui-inline">帐号:</label>
+        <div class="layui-inline">
+            <input type="text" class="layui-input search" name="user_account" placeholder="请输入帐号"></div>
+        <label class="layui-inline">姓名:</label>
+        <div class="layui-inline">
+            <input type="text" class="layui-input search" name="user_name" placeholder="请输入姓名"></div>
+        <div class="layui-inline">
+            <a class="layui-btn layui-btn-sm" id="btn_search">搜索</a> <a class="layui-btn layui-btn-sm"
+                                                                        id="btnAdvancedQuery">高级查询</a></div>
+    </div>
+</div>
+<div class="list_table">
+    <table class="layui-table" id="tabelList">
+        <thead>
+        <tr>
+            <th>账号</th>
+            <th>ip</th>
+            <th>登录时间</th>
+            <th>登录类型</th>
+            <th>状态</th>
+            <th>手机/浏览器</th>
+            <th>imei</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>zhangsan</td>
+            <td>127.0.0.1</td>
+            <td>2018-08-30 13:54:27</td>
+            <td>pc</td>
+            <td>登录成功</td>
+            <td>Mozilla/5.0 (Windows NT 10.0; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>zhangsan</td>
+            <td>127.0.0.1</td>
+            <td>2018-08-30 11:18:26</td>
+            <td>pc</td>
+            <td>登录成功</td>
+            <td>Mozilla/5.0 (Windows NT 10.0; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>zhangsan</td>
+            <td>127.0.0.1</td>
+            <td>2018-08-29 19:37:38</td>
+            <td>pc</td>
+            <td>登录成功</td>
+            <td>Mozilla/5.0 (Windows NT 10.0; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>zhangyang</td>
+            <td>127.0.0.1</td>
+            <td>2018-08-28 15:30:56</td>
+            <td>pc</td>
+            <td>帐号被锁定</td>
+            <td>Mozilla/5.0 (Windows NT 10.0; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>zhangyang</td>
+            <td>127.0.0.1</td>
+            <td>2018-08-28 15:30:46</td>
+            <td>pc</td>
+            <td>密码错误</td>
+            <td>Mozilla/5.0 (Windows NT 10.0; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>zhangyang</td>
+            <td>127.0.0.1</td>
+            <td>2018-08-28 15:30:37</td>
+            <td>pc</td>
+            <td>密码错误</td>
+            <td>Mozilla/5.0 (Windows NT 10.0; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0</td>
+            <td></td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+<div class="list_footer">
+    <p id="printPage">
+
+    </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dc.mapper.SysFileLogDao">
+    <insert id="insertFileLog" parameterType="com.dc.pojo.SysFileLog" keyProperty="file_log_id" useGeneratedKeys="true">
+        insert into t_sys_file_log
+        (file_name,file_rename,file_type,save_path,file_size,file_length,state,message,upload_time,uploader,isdeleted)
+        values
+        (#{file_name},#{file_rename},#{file_type},#{save_path},#{file_size},#{file_length},#{state},#{message},now(),#{uploader},0)
+    </insert>
+<update id="removeFileLogInUserIds" parameterType="string">
+    update t_sys_file_log set isdeleted=1 where file_log_id in
+    (
+    select head_img_url from t_sys_user where user_id in(${userIds})
+    )
+</update>
+</mapper>

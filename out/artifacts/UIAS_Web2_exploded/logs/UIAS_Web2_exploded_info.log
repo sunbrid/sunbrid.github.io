@@ -1,0 +1,4 @@
+[UIAS_Web2_exploded] [INFO] [2019-09-18 00:32:45] org.springframework.context.support.AbstractApplicationContext.doClose(873) | 
+Closing WebApplicationContext for namespace 'springMVC-servlet': startup date [Tue Sep 17 01:04:52 CST 2019]; parent: Root WebApplicationContext
+[UIAS_Web2_exploded] [INFO] [2019-09-18 00:32:45] org.springframework.context.support.AbstractApplicationContext.doClose(873) | 
+Closing Root WebApplicationContext: startup date [Tue Sep 17 01:04:50 CST 2019]; root of context hierarchy

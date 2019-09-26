@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录-统一身份认证系统</title>
+    <link rel="stylesheet" type="text/css" href="base/plugins/layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="base/plugins/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="base/plugins/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="base/plugins/buttonCaptcha/jquery.buttonCaptcha.styles.css">
+    <link rel="stylesheet" type="text/css" href="index/css/login.css">
+
+    <script src="base/js/jquery-3.3.1.min.js"></script>
+    <script src="base/plugins/layui/layui.js" type="application/javascript"></script>
+    <script src="base/plugins/jquery-ui/jquery-ui.js"></script>
+    <script src="base/plugins/buttonCaptcha/jquery.buttonCaptcha.js"></script>
+    <script src="index/js/login.js"></script>
+    <script src="base/js/requestUtil.js"></script>
+    <script src="base/js/security.js"></script>
+    <script src="base/js/jquery.cookie.js"></script>
+
+</head>
+<body>
+<div class="body">
+    <form class="loginGroup layui-form" id="formSubmit">
+        <div class="loginGroup_top"><h1>后台登录</h1>
+            <hr>
+        </div>
+        <div class="loginGroup_content">
+            <div class="loginGroup_item"><i class="fa fa-user"></i>
+                <input class="layui-input" type="text" name="user_account" id="user_account-submit"
+                                                                          placeholder="请输入用户名"></div>
+            <div class="loginGroup_item"><i class="fa fa-key"></i>
+                <input class="layui-input" type="password"  id="user_password-submit"
+                                                                         placeholder="请输入密码">
+                <input class="layui-input" type="hidden" name="user_password"  id="user_password-submit_hidden"
+                       >
+            </div>
+        </div>
+        <div class="loginGroup_foot">
+            <div id="checkGroup"></div>
+            <div class="loginGroup_foot_left"><label>记住密码</label><input id="is_save" lay-skin="switch" type="checkbox"></div>
+            <div class="loginGroup_foot_right">
+                <button class="layui-btn layui-btn-primary hidden" id="btnSubmit" type="button">登录</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+<script>
+    //Demo
+
+</script>
+</html>

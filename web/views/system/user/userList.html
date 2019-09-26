@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+    <link rel="stylesheet" type="text/css" href="../../../base/plugins/layui/css/layui.css">
+    <link rel="stylesheet" href="../../../base/css/global.css">
+    <script type="application/javascript" src="../../../base/plugins/layui/layui.js"></script>
+    <script src="../../../base/js/jquery-3.3.1.min.js"></script>
+    <script src="../../../base/js/global.js"></script>
+    <script src="../../../base/js/requestUtil.js"></script>
+    <script src="../../../base/js/baseUtil.js"></script>
+    <script src="js/userList.js"></script>
+
+</head>
+<body>
+<div class="layui-form">
+    <div class="layui-form-item" id="formSearch">
+        <div class="layui-inline"><a id="btnAdd" class="layui-btn layui-btn-normal permission_add hidden_per">添加用户</a><a
+                class="layui-btn layui-btn-small layui-btn-danger permission_delete hidden_per" id="btnDelete">批量删除</a>
+            <a
+                    class="layui-btn layui-btn-small permission_imp hidden_per" href="../../../files/xlsImportTemplate/SysUser.xls">下载导入模板</a> <a
+                class="layui-btn layui-btn-small permission_imp hidden_per" id="btnImp">导入</a><a id="btnExp"
+                class="layui-btn layui-btn-small permission_exp hidden_per">导出</a></div>
+        <label class="layui-inline">账号:</label>
+        <div class="layui-inline">
+            <input type="text" name="su.account" class="layui-input search" placeholder="请输入账号"></div>
+        <label class="layui-inline">姓名:</label>
+        <div class="layui-inline">
+            <input type="text" name="su.name" class="layui-input search" placeholder="请输入姓名"></div>
+        <div class="layui-inline">
+            <a class="layui-btn layui-btn-small" id="btnSearch">搜索</a>
+            <a class="layui-btn layui-btn-small" id="btnAdvancedSearch">高级查询</a></div>
+    </div>
+</div>
+<div class="list_table">
+    <table class="layui-table" id="tableList">
+        <thead>
+        <tr>
+            <th><input type="checkbox" class="inpDel"></th>
+            <th>账号</th>
+            <th>手机号码</th>
+            <th>姓名</th>
+            <th>所属角色</th>
+            <th>籍贯</th>
+            <th>出生日期</th>
+            <th>账号是否启用</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+<div class="list_footer" id="printPage">
+    <p class="layui-box layui-laypage layui-laypage-default"><a>1</a><a>2</a><a>3</a><a>末页</a><a>下一页</a></p>
+</div>
+</body>
+<script> layui.use('form', function () {
+    //var form = layui.form();
+});</script>
+</html>

@@ -1,0 +1,86 @@
+{
+  "resultCode": 0,
+  "message": "根据id查询角色信息成功",
+  "data": {
+    "role_id": 31,
+    "role": {
+      "role_id": 31,
+      "memo": "",
+      "name": "系统模块管理员",
+      "create_user_id": 0,
+      "create_user_name": "张三1",
+      "create_time": 1535168785000,
+      "update_user_id": 0,
+      "update_user_name": "张三1",
+      "update_time": 1535341004000,
+      "is_deleted": 0,
+      "version": 1
+    },
+    "listRolePermission": [
+      {
+        "permission_id": 1547,
+        "fk_role_id": 0,
+        "code": "203",
+        "permission_value": "11111",
+        "create_user_id": 0,
+        "create_user_name": null,
+        "create_time": null,
+        "update_user_id": 0,
+        "update_user_name": null,
+        "update_time": null,
+        "is_deleted": 0,
+        "version": 0
+      },
+      {
+        "permission_id": 1548,
+        "fk_role_id": 0,
+        "code": "204",
+        "permission_value": "111111",
+        "create_user_id": 0,
+        "create_user_name": null,
+        "create_time": null,
+        "update_user_id": 0,
+        "update_user_name": null,
+        "update_time": null,
+        "is_deleted": 0,
+        "version": 0
+      },
+      {
+        "permission_id": 1549,
+        "fk_role_id": 0,
+        "code": "103",
+        "permission_value": "1",
+        "create_user_id": 0,
+        "create_user_name": null,
+        "create_time": null,
+        "update_user_id": 0,
+        "update_user_name": null,
+        "update_time": null,
+        "is_deleted": 0,
+        "version": 0
+      },
+      {
+        "permission_id": 1550,
+        "fk_role_id": 0,
+        "code": "102",
+        "permission_value": "1",
+        "create_user_id": 0,
+        "create_user_name": null,
+        "create_time": null,
+        "update_user_id": 0,
+        "update_user_name": null,
+        "update_time": null,
+        "is_deleted": 0,
+        "version": 0
+      }
+    ]
+  },
+  "tempMFile": null,
+  "filesArray": null,
+  "queryParams": null,
+  "listAdvancedQuery": null,
+  "aopMesg": "31",
+  "token": "9b1d4d49-1820-c593-4817-b31dd340d683",
+  "permission": "11111",
+  "permission_btns": ".permission_search,.permission_add,.permission_update,.permission_delete"
+}

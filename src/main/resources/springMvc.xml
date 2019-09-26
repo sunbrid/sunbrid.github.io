@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+   http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-4.0.xsd
+  http://www.springframework.org/schema/mvc
+   http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+                        http://www.springframework.org/schema/aop
+                        http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+    <mvc:annotation-driven></mvc:annotation-driven>
+    <!--启动Spring注解配置(@Autowired、@Resource)-->
+    <context:annotation-config/>
+    <!-- 全局扫描-->
+    <context:component-scan base-package="com.dc.controller,com.dc.base.controller,com.dc.base.aop"></context:component-scan>
+    <!--全局扫描器 -->
+    <context:component-scan base-package="com.dc.service"></context:component-scan>
+    <!--加载静态资源，忽略html、js、css、image等拦截-->
+    <mvc:default-servlet-handler/>
+    <!-- 配置试图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/views/"/>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+    <!-- 文件上传-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 文件上传最大大小-->
+        <property name="maxUploadSize" value="102400000"></property>
+        <!-- 文件的编码格式-->
+        <property name="defaultEncoding" value="utf-8"></property>
+    </bean>
+    <bean class="com.dc.base.swagger.SwaggerConfig"></bean>
+    <mvc:resources mapping="/swagger/**" location="/swagger/"/>
+    <!-- Aop注解aspectj -->
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+    <!--统一异常处理器-->
+    <!--  <bean class="com.dc.base.exception.BusinessExceptionResolver"></bean>-->
+</beans>

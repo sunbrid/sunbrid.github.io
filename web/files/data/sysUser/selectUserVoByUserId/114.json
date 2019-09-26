@@ -1,0 +1,55 @@
+{
+  "resultCode": 0,
+  "message": "查询成功",
+  "data": {
+    "user_id": 113,
+    "role_names": "张三专用,管理员",
+    "old_password": null,
+    "user": {
+      "user_id": 113,
+      "account": "zhangsan",
+      "password": null,
+      "name": "张三",
+      "phone": "18868",
+      "head_img_url": null,
+      "state": 1,
+      "create_user_id": 0,
+      "create_user_name": "管理员",
+      "create_time": 1534228296000,
+      "update_user_id": 0,
+      "update_user_name": "张三",
+      "update_time": 1535437220000,
+      "is_deleted": 0,
+      "address": null,
+      "email": "",
+      "birthday": 1093622400000,
+      "version": 22,
+      "sex": 0,
+      "memo": "ces"
+    },
+    "listRole": null,
+    "listUserRole": [
+      {
+        "user_role_id": 0,
+        "fk_user_id": 0,
+        "fk_role_id": 25,
+        "version": 0
+      },
+      {
+        "user_role_id": 0,
+        "fk_user_id": 0,
+        "fk_role_id": 26,
+        "version": 0
+      }
+    ],
+    "fileLog": null
+  },
+  "tempMFile": null,
+  "filesArray": null,
+  "queryParams": null,
+  "listAdvancedQuery": null,
+  "aopMesg": "",
+  "token": "6e74e4df-39cb-8813-b38b-5298cf0547bc",
+  "permission": "111111",
+  "permission_btns": ".permission_search,.permission_add,.permission_update,.permission_delete,.permission_imp,.permission_exp"
+}

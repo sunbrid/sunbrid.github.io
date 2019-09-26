@@ -1,0 +1,13 @@
+{
+  "resultCode": 0,
+  "message": "修改角色‘日志查看’信息成功",
+  "data": null,
+  "tempMFile": null,
+  "filesArray": null,
+  "queryParams": null,
+  "listAdvancedQuery": null,
+  "aopMesg": "修改角色‘日志查看’信息成功",
+  "token": "324d0ad9-cf8b-0a41-03d0-264c2cc81a3a",
+  "permission": "11111",
+  "permission_btns": ".permission_search,.permission_add,.permission_update,.permission_delete"
+}

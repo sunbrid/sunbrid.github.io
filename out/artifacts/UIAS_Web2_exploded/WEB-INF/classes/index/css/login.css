@@ -1,0 +1,79 @@
+body {
+    background-image: url("../../images/login_bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+
+}
+.loginGroup{
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 400px;
+    margin: 10% auto;
+    background-color: rgba(0,0,0,0.5);
+    padding: 10px;
+    overflow: hidden;
+}
+.loginGroup_top h1{
+    text-align: center;
+    color: white;
+}
+.loginGroup_item{
+    margin: 10px;
+}
+.loginGroup_item{
+    position: relative;
+    margin-top: 30px;
+    width: 90%;
+}
+.loginGroup_item i{
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    font-size: 20px;
+    color: #8D8D8D;
+}
+.layui-input{
+    padding-left: 30px;
+}
+.loginGroup_foot_left{
+    float: left;
+    margin-left: 30px;
+}
+.loginGroup_foot_right{
+    float: right;
+    margin-right: 30px;
+}
+.loginGroup_foot_left label{
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+}
+.layui-form-switch{
+    margin-top: -6px;
+}
+.loginGroup_foot{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+.captcha_showtip{
+    color: #fff9ec;
+}
+.captcha_gbws_wrap{
+    margin-top: 0;
+    margin-left: 90px;
+}
+.captcha_left{
+    width: 14px;
+}
+.captcha_top{
+    color: #fff9ec;
+}
+.hidden{
+    display: none;
+}
+#checkGroup{
+    height: 130px;
+}

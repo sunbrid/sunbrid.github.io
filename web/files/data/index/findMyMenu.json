@@ -1,0 +1,78 @@
+{
+  "resultCode": 0,
+  "message": "",
+  "data": {
+    "menu_1": [
+      {
+        "menu_id": 1,
+        "code": "1",
+        "name": "系统管理",
+        "is_leaf": 0,
+        "fk_parent_id": 0,
+        "is_show": 1,
+        "url": "",
+        "icon": "fa fa-cogs",
+        "ids": "",
+        "version": 0
+      }
+    ],
+    "menu_2": [
+      {
+        "menu_id": 8,
+        "code": "102",
+        "name": "登录日志",
+        "is_leaf": 1,
+        "fk_parent_id": 1,
+        "is_show": 1,
+        "url": "views/system/loginLog/loginLogList.jsp",
+        "icon": "fa fa-address-book",
+        "ids": "",
+        "version": 0
+      },
+      {
+        "menu_id": 9,
+        "code": "103",
+        "name": "操作日志",
+        "is_leaf": 1,
+        "fk_parent_id": 1,
+        "is_show": 1,
+        "url": "views/system/openationLog/openationLogList.jsp",
+        "icon": "fa fa-book",
+        "ids": "",
+        "version": 0
+      },
+      {
+        "menu_id": 14,
+        "code": "203",
+        "name": "角色管理",
+        "is_leaf": 1,
+        "fk_parent_id": 1,
+        "is_show": 1,
+        "url": "views/system/role/roleList.jsp",
+        "icon": "fa fa-cubes",
+        "ids": ".permission_search;.permission_add;.permission_update;.permission_delete;",
+        "version": 0
+      },
+      {
+        "menu_id": 15,
+        "code": "204",
+        "name": "用户管理",
+        "is_leaf": 1,
+        "fk_parent_id": 1,
+        "is_show": 1,
+        "url": "views/system/user/userList.jsp",
+        "icon": "fa fa-user",
+        "ids": ".permission_search;.permission_add;.permission_update;.permission_delete;.permission_imp;.permission_exp;",
+        "version": 0
+      }
+    ]
+  },
+  "tempMFile": null,
+  "filesArray": null,
+  "queryParams": null,
+  "listAdvancedQuery": null,
+  "aopMesg": "",
+  "token": "dd7162e7-deae-6dea-cc35-34ce6fdfe186",
+  "permission": null,
+  "permission_btns": null
+}

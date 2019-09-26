@@ -1,0 +1,50 @@
+.layui-header .layui-layout-right img{
+    width: 50px;
+    height: 50px;
+
+}
+.layui-layout-right{
+    margin-right: 30px;
+}
+.session_user_name{
+    margin-left: 20px;
+
+}
+.layui-layout-admin .layui-logo{
+    font-size: 24px;
+    margin-left: 20px;
+}
+.layui-layout-right .layui-nav-child a{
+    color: #8D8D8D;
+}
+.layui-tab-title .layui-this{
+    background-color: #009688;
+    color: white;
+}
+.header{
+    border-bottom: 5px solid #009688;
+}
+.main_right_tab.layui-tab{
+   margin-top: 4px;
+}
+.main_right_tab .layui-tab-title{
+    border-color: #009688 ;
+
+}
+.layui-tab-title .layui-this:after{
+    border-style: none;
+}
+.layui-tab-item iframe{
+    width: 100%;
+    border: 0;
+    height: 100%;
+}
+.main_right_foot{
+    text-align: center;
+}
+.main_right_tab .tab_index i{
+    display: none;
+}
+.hidden{
+    display: none;
+}

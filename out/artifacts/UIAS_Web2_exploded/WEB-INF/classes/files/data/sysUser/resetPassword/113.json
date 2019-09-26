@@ -1,0 +1,13 @@
+{
+  "resultCode": 0,
+  "message": "密码已重置",
+  "data": null,
+  "tempMFile": null,
+  "filesArray": null,
+  "queryParams": null,
+  "listAdvancedQuery": null,
+  "aopMesg": "118",
+  "token": "55cce596-6a98-416c-a933-6728bb79cab8",
+  "permission": "111111",
+  "permission_btns": ".permission_search,.permission_add,.permission_update,.permission_delete,.permission_imp,.permission_exp"
+}

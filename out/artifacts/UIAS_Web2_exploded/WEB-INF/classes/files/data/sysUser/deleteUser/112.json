@@ -1,0 +1,13 @@
+{
+  "resultCode": 0,
+  "message": "删除“1”条用户信息成功",
+  "data": 1,
+  "tempMFile": null,
+  "filesArray": null,
+  "queryParams": null,
+  "listAdvancedQuery": null,
+  "aopMesg": "119",
+  "token": "a7e9d540-8adb-02aa-1a66-41e5f44ef6c5",
+  "permission": "111111",
+  "permission_btns": ".permission_search,.permission_add,.permission_update,.permission_delete,.permission_imp,.permission_exp"
+}

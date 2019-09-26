@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>角色新增</title>
+    <link rel="stylesheet" type="text/css" href="../../../base/plugins/layui/css/layui.css">
+    <link rel="stylesheet" href="../../../base/css/global.css">
+    <script type="application/javascript" src="../../../base/plugins/layui/layui.js"></script>
+    <script src="../../../base/js/jquery-3.3.1.min.js"></script>
+    <script src="../../../base/js/global.js"></script>
+    <script src="../../../base/js/requestUtil.js"></script>
+    <script src="../../../base/js/baseUtil.js"></script>
+    <script src="js/roleEdit.js"></script>
+    <style>
+        .rolePerssionGroup dl {
+            clear: both;
+        }
+
+        .rolePerssionGroup dl dd, .rolePerssionGroup dl dt {
+            float: left;
+        }
+
+    </style>
+
+</head>
+<body>
+<form class="layui-form site-title" id="formSubmit">
+    <fieldset>
+        <legend>新增角色信息</legend>
+        <div class="form_item layui-form-item"><label class="layui-form-label">角色名称：</label>
+            <div class="layui-input-block"><input class="layui-input" type="text" placeholder="请输入角色名称" name="role.name" id="name-role-submit"></div>
+        </div>
+        <div class="form_item layui-form-item"><label class="layui-form-label">角色描述：</label>
+            <div class="layui-input-block"><textarea placeholder="请输入角色描述" class="layui-textarea" name="role.memo" id="memo-role-submit"></textarea></div>
+        </div>
+        <div class="form_item layui-form-item rolePerssionGroup" id="rolePerssionGroup">
+            <dl>
+                <dt><input type="checkbox" title="角色管理">
+                <input type="hidden" class="in_code" name="" value="201">
+                    <input type="hidden" class="in_permission_value"name="" value="1001">
+                </dt>
+                <dd><input type="checkbox" title="查询"></dd>
+                <dd><input type="checkbox" title="新增"></dd>
+                <dd><input type="checkbox" title="修改"></dd>
+                <dd><input type="checkbox" title="删除"></dd>
+            </dl>
+            <dl>
+                <dt><input type="checkbox" title="用户管理"></dt>
+                <dd><input type="checkbox" title="查询"></dd>
+                <dd><input type="checkbox" title="新增"></dd>
+                <dd><input type="checkbox" title="修改"></dd>
+                <dd><input type="checkbox" title="删除"></dd>
+                <dd><input type="checkbox" title="导入"></dd>
+                <dd><input type="checkbox" title="导出"></dd>
+            </dl>
+            <dl>
+                <dt><input type="checkbox" title="操作日志"></label></dt>
+                <dd><input type="checkbox" title="查询"></label></dd>
+
+            </dl>
+            <dl>
+                <dt><input type="checkbox" title="登录日志"></dt>
+                <dd><input type="checkbox" title="查询"></dd>
+
+            </dl>
+        </div>
+        <div class="form_item layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn layui-btn-normal" type="button" id="btnSubmit">提交</button>
+                <button class="layui-btn layui-btn-primary" type="reset">重置</button>
+                <button class="layui-btn layui-btn-danger" id="btnClose" type="button">关闭</button>
+            </div>
+        </div>
+    </fieldset>
+</form>
+</body>
+<script>
+    layui.use(["form"], function () {
+
+    });
+</script>
+</html>
